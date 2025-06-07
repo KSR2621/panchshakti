@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Expertise - Panch Shakti Films & Studio</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* All CSS is the same as the last version you approved */
+        :root { --primary-color: #f0c420; --dark-bg: #000000; --section-bg: #121212; --card-bg: #1a1a1a; --text-color: #e0e0e0; --heading-color: #ffffff; --border-color: #444; --hero-tint-color: rgba(0, 0, 0, 0.6); }
+        html { scroll-behavior: smooth; } * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: var(--text-color); transition: color 0.3s ease; } a:hover { color: var(--primary-color); }
+        ul { list-style: none; } img { max-width: 100%; height: auto; display: block; } h1, h2, h3, h4 { color: var(--heading-color); line-height: 1.2; font-weight: 600; }
+        .section-padding { padding: 100px 0; }
+        .fade-in-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-element.is-visible { opacity: 1; transform: translateY(0); }
+        header { position: absolute; width: 100%; top: 0; left: 0; padding: 25px 0; z-index: 1000; }
+        header .nav-wrapper { max-width: 1380px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+        header .logo img { height: 70px; }
+        header nav ul { display: flex; gap: 40px; } header nav ul a { font-weight: 500; color: var(--heading-color); }
+        .menu-toggle, .close-menu { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 1001; }
+        .btn-outline { border: 1px solid var(--primary-color); color: var(--primary-color); padding: 12px 28px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; text-align: center; }
+        .btn-outline:hover { background-color: var(--primary-color); color: #000; }
+        .hero-wrapper { position: relative; }
+        #hero-expertise { height: 500px; background: url('service_background.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+        #hero-expertise::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--hero-tint-color); }
+        #hero-expertise .container { position: relative; z-index: 2; }
+        #hero-expertise h1 { font-size: 3.5rem; font-weight: 700; }
+        #our-expertise { background-color: var(--dark-bg); }
+        .expertise-card { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; margin-bottom: 80px; padding: 40px; background-color: var(--dark-bg); border-radius: 15px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .expertise-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .expertise-card:last-child { margin-bottom: 0; }
+        .expertise-content h3 { font-size: 2.2rem; margin-bottom: 15px; }
+        .expertise-content p { margin-bottom: 25px; max-width: 500px; }
+        .expertise-content .read-more { color: var(--primary-color); font-weight: 500; text-decoration: underline; }
+        .expertise-image img { border-radius: 10px; width: 100%; height: 350px; object-fit: cover; }
+        footer { background-color: var(--section-bg); padding-top: 80px; }
+        .footer-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 60px; }
+        .footer-col h4 { margin-bottom: 20px; font-size: 1.1rem; } .footer-col p, .footer-col ul li { margin-bottom: 10px; color: #aaa; font-size: 0.95rem; }
+        .footer-col ul li a { color: #aaa; } .footer-col ul li a:hover { color: var(--primary-color); } .footer-col .footer-logo { width: 180px; margin-bottom: 20px; }
+        .social-links a { display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: var(--card-bg); border-radius: 50%; margin-right: 10px; color: var(--text-color); transition: all 0.3s ease; }
+        .social-links a:hover { background-color: var(--primary-color); color: #000; }
+        .footer-bottom { border-top: 1px solid var(--border-color); padding: 25px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #aaa; }
+        .footer-bottom a { color: #aaa; } .footer-bottom a:hover { color: var(--primary-color); }
+        @media (max-width: 992px) { header .nav-wrapper { padding: 0 20px; } .menu-toggle { display: block; } header .btn-outline { display: none; } header nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: var(--dark-bg); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1000; } header nav.is-active { right: 0; } header nav ul { flex-direction: column; gap: 30px; text-align: center; } header nav ul a { font-size: 1.5rem; } .close-menu { display: block; position: absolute; top: 30px; right: 30px; font-size: 30px; } .section-padding { padding: 80px 0; } #hero-expertise h1 { font-size: 2.8rem; } }
+        @media (max-width: 768px) { #hero-expertise { height: 400px; } #hero-expertise h1 { font-size: 2.2rem; } .expertise-card { grid-template-columns: 1fr; gap: 30px; text-align: center; padding: 30px; } .expertise-card .expertise-image { grid-row: 1; } .expertise-content p { max-width: 100%; } .expertise-image img { height: 250px; } .footer-main { text-align: center; } .footer-col .footer-logo { margin: 0 auto 20px auto; } .social-links { justify-content: center; } .footer-bottom { flex-direction: column; text-align: center; gap: 15px; } .footer-bottom div { margin-top: 10px; } }
+    </style>
+</head>
+<body>
+    <div class="hero-wrapper">
+        <header>
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo"><img src="2.png" alt="Panch Shakti Logo"></a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+                <nav id="main-nav">
+                    <button class="close-menu" id="close-menu" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#welcome">About Us</a></li>
+                        <li><a href="our_work.html">Our Work</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="index.html#contact" class="btn-outline">Let's Discuss</a>
+            </div>
+        </header>
+        <section id="hero-expertise"><div class="container"><h1>Our Services & Expertise</h1></div></section>
+    </div>
+    <main>
+        <section id="our-expertise" class="section-padding">
+            <div class="container">
+                 <!-- The href links now point to service-details.html with a unique anchor -->
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-content">
+                         <h3>Casting & Modelling Agency Platform</h3>
+                         <p>We build and manage comprehensive platforms for casting directors and modelling agencies, connecting talent with opportunities seamlessly.</p>
+                         <a href="service-details.html#casting-modelling" class="read-more">Learn More</a>
+                     </div>
+                     <div class="expertise-image"><img src="Casting & Modelling.jpg" alt="Photographer directing a model"></div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-image"><img src="AI Based Digital Marketing.jpg" alt="AI marketing strategy"></div>
+                     <div class="expertise-content">
+                         <h3>AI based Digital Marketing</h3>
+                         <p>Leverage the power of Artificial Intelligence to optimize your marketing campaigns, from targeted advertising to performance analytics.</p>
+                         <a href="service-details.html#ai-marketing" class="read-more">Learn More</a>
+                     </div>
+                  </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-content">
+                         <h3>Website Designing</h3>
+                         <p>From stunning landing pages to complex e-commerce solutions, we design responsive, user-friendly websites that perform flawlessly.</p>
+                         <a href="service-details.html#website-designing" class="read-more">Learn More</a>
+                     </div>
+                     <div class="expertise-image"><img src="Website Designing.jpg" alt="Website design on laptop"></div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-image"><img src="Video Ad Shoot.jpg" alt="Video ad shoot"></div>
+                     <div class="expertise-content">
+                         <h3>Video Ad Shoot</h3>
+                         <p>We produce compelling video advertisements, from concept and scriptwriting to filming and post-production, designed to captivate and convert.</p>
+                         <a href="service-details.html#video-ad" class="read-more">Learn More</a>
+                     </div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-content">
+                         <h3>Model Portfolio Shoot</h3>
+                         <p>Our professional photoshoots create stunning, high-quality portfolios that highlight the unique strengths and versatility of each model.</p>
+                         <a href="service-details.html#model-portfolio" class="read-more">Learn More</a>
+                     </div>
+                     <div class="expertise-image"><img src="Model Portfolio Shoot.jpg" alt="Model portfolio shoot"></div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-image"><img src="Graphic Design & Branding.jpg" alt="Corporate branding book"></div>
+                     <div class="expertise-content">
+                         <h3>Corporate Branding</h3>
+                         <p>We create powerful brand identities that resonate with your target market, including logos, style guides, and complete marketing collateral.</p>
+                         <a href="service-details.html#corporate-branding" class="read-more">Learn More</a>
+                     </div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-content">
+                         <h3>Celebrity Management</h3>
+                         <p>We provide comprehensive management services for celebrities, handling everything from endorsements and public appearances to brand collaborations.</p>
+                         <a href="service-details.html#celebrity-management" class="read-more">Learn More</a>
+                     </div>
+                     <div class="expertise-image"><img src="Celebrity Management.jpg" alt="Celebrity management"></div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-image"><img src="3D Graphics Designing.jpg" alt="3D graphics logo"></div>
+                     <div class="expertise-content">
+                         <h3>3D Graphics Designing</h3>
+                         <p>Bring your ideas to life with our advanced 3D graphics and animation services, perfect for product visualization, renders, and special effects.</p>
+                         <a href="service-details.html#3d-graphics" class="read-more">Learn More</a>
+                     </div>
+                 </div>
+                 <div class="expertise-card fade-in-element">
+                     <div class="expertise-content">
+                         <h3>Music Album Shoot</h3>
+                         <p>From concept art to the final album cover, we manage the entire visual production for music albums, including photoshoots and music videos.</p>
+                         <a href="service-details.html#music-album" class="read-more">Learn More</a>
+                     </div>
+                     <div class="expertise-image"><img src="Full-Service Film Production.jpg" alt="Music album shoot setup"></div>
+                 </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-col fade-in-element"><img src="2.png" alt="PSFS Logo" class="footer-logo"><p><strong>Phone :</strong><br> 8888868698</p><p><strong>Email :</strong><br> Panchshaktifilmandstudio@123Gmail.com</p></div>
+                <div class="footer-col fade-in-element"><h4>Address :</h4><p>B - 403, Panchtirth Annex,<br>nr. VJSS College, Banthara (Paduk),<br>Pune - 411048 (Maharashtra)</p></div>
+                <div class="footer-col fade-in-element"><h4>Quick Links :</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#welcome">About Us</a></li><li><a href="OurExpertise.html">Services</a></li><li><a href="our_work.html">Our Work</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+                <div class="footer-col fade-in-element"><h4>Stay Connected, Follow Us On Social Media</h4><div class="social-links"><a href="https://www.instagram.com/your-profile-name" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/company/your-company-name" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div></div>
+            </div>
+            <div class="footer-bottom fade-in-element"><p>© 2024 PANCH SHAKTI FILMS & STUDIO | POWERED BY PANCH SHAKTI FILMS & STUDIO</p><div><a href="privacy.html">PRIVACY POLICY</a><a href="terms.html" style="margin-left: 20px;">TERMS & CONDITIONS</a></div></div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle'); const closeMenu = document.getElementById('close-menu'); const mainNav = document.getElementById('main-nav');
+        if (menuToggle && mainNav) { menuToggle.addEventListener('click', () => mainNav.classList.add('is-active')); }
+        if (closeMenu && mainNav) { closeMenu.addEventListener('click', () => mainNav.classList.remove('is-active')); }
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 }; const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, observerOptions);
+            const fadeElements = document.querySelectorAll('.fade-in-element'); fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

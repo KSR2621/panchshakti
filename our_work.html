@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Panch Shakti Films & Studio</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- General & Root Styles --- */
+        :root {
+            --primary-color: #f0c420; 
+            --dark-bg: #000000;
+            --section-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+            --heading-color: #ffffff;
+            --border-color: #444;
+            --hero-tint-color: rgba(0, 0, 0, 0.6);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--dark-bg);
+        }
+        
+        main {
+           /* Background styles removed */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
+            line-height: 1.2;
+            font-weight: 600;
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header Styles --- */
+        header {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 25px 0;
+            z-index: 1000;
+        }
+
+        header .nav-wrapper {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 70px;
+        }
+        
+        header nav ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        header nav ul a {
+            font-weight: 500;
+            color: var(--heading-color);
+        }
+
+        .menu-toggle, .close-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #000;
+        }
+        
+        /* --- Styles for the Work Grid on this page --- */
+        #our-work {
+            background-color: transparent;
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .work-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            width: 100%; 
+            border: 1px solid var(--border-color);
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+        .work-title-box {
+            padding: 20px 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .work-title-box h4 {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .work-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--section-bg);
+            padding-top: 80px;
+        }
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 60px;
+        }
+        .footer-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col p, .footer-col ul li { margin-bottom: 10px; color: #aaa; font-size: 0.95rem; }
+        .footer-col ul li a { color: #aaa; }
+        .footer-col ul li a:hover { color: var(--primary-color); }
+        .footer-col .footer-logo { width: 180px; margin-bottom: 20px; }
+        .social-links a { display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: var(--card-bg); border-radius: 50%; margin-right: 10px; color: var(--text-color); transition: all 0.3s ease; }
+        .social-links a:hover { background-color: var(--primary-color); color: #000; }
+        .footer-bottom { border-top: 1px solid var(--border-color); padding: 25px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #aaa; }
+        .footer-bottom a { color: #aaa; }
+        .footer-bottom a:hover { color: var(--primary-color); }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            header .nav-wrapper { padding: 0 20px; }
+            .menu-toggle { display: block; }
+            header .btn-outline { display: none; }
+            header nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: var(--dark-bg); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1000; }
+            header nav.is-active { right: 0; }
+            header nav ul { flex-direction: column; gap: 30px; text-align: center; }
+            header nav ul a { font-size: 1.5rem; }
+            .close-menu { display: block; position: absolute; top: 30px; right: 30px; font-size: 30px; }
+            .section-padding { padding: 80px 0; }
+        }
+        @media (max-width: 768px) {
+            .section-padding { padding: 60px 0; }
+            .footer-main { text-align: center; }
+            .footer-col .footer-logo { margin: 0 auto 20px auto; }
+            .social-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
+            .footer-bottom div { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="2.png" alt="Panch Shakti Logo">
+            </a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="main-nav">
+                <button class="close-menu" id="close-menu" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                 <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#welcome">About Us</a></li>
+                        <li><a href="OurExpertise.html">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+            </nav>
+            <a href="index.html#contact" class="btn btn-outline">Let's Discuss</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Title section with padding to push content below the absolute header -->
+        <section class="section-padding" style="padding-bottom: 0;">
+             <div class="container" style="text-align: center; padding-top: 120px;">
+                <h1 style="font-size: 3.5rem; font-weight: 700;">Our Work</h1>
+             </div>
+        </section>
+
+        <!-- OUR WORK SECTION -->
+        <section id="our-work" class="section-padding">
+            <div class="container">
+                <div class="work-grid">
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Website<br>Development</h4></div>
+                        <img src="web_dev.jpg" alt="Website Development">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Logo<br>Design</h4></div>
+                        <img src="logo_design.jpg" alt="Logo Design">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>SEO</h4></div>
+                        <img src="seo.jpg" alt="SEO">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Architecture &<br>Interior Design</h4></div>
+                        <img src="Architecture.jpg" alt="Architecture & Interior Design">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Voice<br>Over</h4></div>
+                        <img src="Voice.jpg" alt="Voice Over">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Social Media<br>Marketing</h4></div>
+                        <img src="SocialMedia.jpg" alt="Social Media Marketing">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Film<br>Making</h4></div>
+                        <img src="Film.jpg" alt="Film Making">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Product<br>Photography</h4></div>
+                        <img src="Product.jpg" alt="Product Photography">
+                    </div>
+                    <div class="work-item fade-in-element">
+                        <div class="work-title-box"><h4>Brand<br>Identity</h4></div>
+                        <img src="Brand.jpg" alt="Brand Identity">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION (UPDATED) -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-col fade-in-element">
+                    <img src="2.png" alt="PSFS Logo" class="footer-logo">
+                    <p><strong>Phone :</strong><br> 8888868698</p>
+                    <p><strong>Email :</strong><br> Panchshaktifilmandstudio@123Gmail.com</p>
+                </div>
+                 <div class="footer-col fade-in-element">
+                    <h4>Address :</h4>
+                    <p>B - 403, Panchtirth Annex,<br>
+                    nr. VJSS College, Banthara (Paduk),<br>
+                    Pune - 411048 (Maharashtra)</p>
+                </div>
+                 <div class="footer-col fade-in-element">
+                    <h4>Quick Links :</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#welcome">About Us</a></li>
+                        <li><a href="OurExpertise.html">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-col fade-in-element">
+                    <h4>Stay Connected, Follow Us On Social Media</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom fade-in-element">
+                <p>© 2024 PANCH SHAKTI FILMS & STUDIO | POWERED BY PANCH SHAKTI FILMS & STUDIO</p>
+                <div>
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#" style="margin-left: 20px;">TERMS & CONDITIONS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mainNav = document.getElementById('main-nav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.add('is-active');
+            });
+        }
+        if (closeMenu && mainNav) {
+            closeMenu.addEventListener('click', () => {
+                mainNav.classList.remove('is-active');
+            });
+        }
+    </script>
+    
+    <!-- JAVASCRIPT FOR FADE-IN EFFECT ON SCROLL -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
